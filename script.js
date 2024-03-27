@@ -20,11 +20,6 @@ if (personalMovieDB.count < 10) {
     console.log('Ответ перепиши, пидор');
 }
 
-// let Q1 = prompt('Один из последних просмотренных фильмов?', '');
-// let Q2 = +prompt('На сколько оцените его?', '');
-// let Q3 = prompt('Один из последних просмотренных фильмов?', '');
-// let Q4 = +prompt('На сколько оцените его?', '');
-
 for (let i=0; i<2; i++) {
     const Q1 = prompt('Один из последних просмотренных фильмов?', '');
     const Q2 = +prompt('На сколько оцените его?', '');
@@ -34,8 +29,18 @@ for (let i=0; i<2; i++) {
         i--;
     }
 }
+function ShowMyDB () {
+    if(personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    }
+}
 
-// personalMovieDB.movies[Q1] = Q2;
-// personalMovieDB.movies[Q3] = Q4;
+ShowMyDB();
 
+function WriteYourGenres () {
+    for (let i =1; i<=3; i++) {
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр под номером ${i}`);
+    }
+}
 
+WriteYourGenres();
